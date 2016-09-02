@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";
+#body {
+	margin: 0;
+	padding: 0;
+}
+
+#header, #menu, #corpo, #esquerda, #pe {
+	padding: 1em;
+}
+
+#header {
+	width: 97%;
+	height: 50px;
+	background-color: red;
+}
+
+#contedor {
+	width: 99%;
+	height: 600px;
+	background-color: white;
+}
+
+#menu {
+	width: 20%;
+	height: 95%;
+	background-color: #00ff80;
+	float: left;
+}
+
+#corpo {
+	width: 70%;
+	height: 95%;
+	background-color: white;
+	float: left;
+}
+
+#pe {
+	width: 97%;
+	height: 50px;
+	background-color: black;
+	color: white;
+}
+
+#actual {
+	color: black;
+	text-decoration: none;
+}
+
+#listado a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+input{
+	width:300px;
+}
+
+.error{
+	color: red;
+}
+
+.botonborrar{
+	width: 60px;
+}
+.producto{
+	background-color: #d8d8d8;
+	width: 100%;
+}
+.pro_cabeceira{
+	background-color: #c5c5c5;
+	width: 100%;
+	font-size: 120%;
+}
+.pro_cab_esq{
+	float: left;
+	width: 70%;
+}
+.pro_cab_der{
+	float: right;
+	width: 30%;
+}
