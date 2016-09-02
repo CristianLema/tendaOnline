@@ -14,6 +14,7 @@ import com.sopra.tienda.dominio.Usuario;
 import com.sopra.tienda.exception.DAOException;
 import com.sopra.tienda.exception.DomainException;
 import com.sopra.tienda.objetos.daos.UsuarioDAOH;
+import com.sopra.tienda.util.Rutinas;
 
 /**
  * Servlet implementation class EngadirUser
@@ -94,6 +95,7 @@ public class EngadirUser extends HttpServlet {
 				} catch (DomainException e) {
 					e.printStackTrace();
 				}
+				System.out.println("----------------------"+Rutinas.convierteAString(user.getUser_fecAlta()));
 				// HTML confirmación de creación de usuario
 				out.println("<HTML>");
 				out.println("<HEAD><TITLE>Inserción de usuario</TITLE></HEAD>");
