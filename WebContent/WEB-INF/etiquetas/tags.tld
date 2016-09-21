@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>2.0</jsp-version>
+  <short-name>Etiquetas</short-name>
+  <tag>
+    <name>menu</name>
+    <tag-class>com.sopra.tienda.tags.MenuTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+    	<name>type</name>
+    	<required>true</required>
+    	<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+    	<name>pos</name>
+    	<required>true</required>
+    	<rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

@@ -66,19 +66,14 @@ public class IdentificarUsuario extends HttpServlet {
 		}
 		
 		
-		
-		try {
-			user=uDAOH.leerRegistro(user);
-		} catch (DAOException e1) {
-			e1.printStackTrace();
-		}
 
 		try {
-			if (uDAOH.leerRegistro(user) != null) {
-				if (user_pass.equals((uDAOH.leerRegistro(user)).getUser_pass())) {
+			user=uDAOH.leerRegistro(user);
+			if (user != null) {
+				if (user_pass.equals(user.getUser_pass())) {
 					HttpSession session = request.getSession();
 					session.setAttribute("myUser", user);
-					if ((uDAOH.leerRegistro(user)).getUser_tipo() == 9) {
+					if (user.getUser_tipo() == 9) {
 						RequestDispatcher dispatcher = request.getRequestDispatcher("/homeAdmin.jsp");
 						if (dispatcher != null) {
 							dispatcher.forward(request, response);
@@ -97,15 +92,6 @@ public class IdentificarUsuario extends HttpServlet {
 						dispatcher.forward(request, response);
 					}
 					
-					/*
-					out.println("<HTML>");
-					out.println("<HEAD><TITLE>Error contraseña</TITLE></HEAD>");
-					out.println("<BODY>");
-					out.println("<H1>Contraseña incorrecta</H1>");
-					out.println("<P>La contraseña no es correcta</P>");
-					out.println("<A HREF=\"identificacion.jsp\" style=\"margin-top:50px;margin-left:300px;\">Volver</A>");
-					out.println("</BODY></HTML>");
-					*/
 				}
 			} else {
 				
@@ -115,17 +101,6 @@ public class IdentificarUsuario extends HttpServlet {
 					dispatcher.forward(request, response);
 				}
 				
-				/*
-				out.println("<HTML>");
-				out.println("<HEAD><TITLE>Error usuario</TITLE></HEAD>");
-				out.println("<BODY>");
-				out.println("<H1>Usuario no registrado</H1>");
-				out.println("<P>Los datos introducidos no corresponden al de ningún usuario</P>");
-				out.println("<A HREF=\"identificacion.jsp\" style=\"margin-top:50px;margin-left:300px;\">Volver</A>");
-				out.println(
-						"<A HREF=\"crearUsuario.jsp\" style=\"margin-top:50px;margin-left:300px;\">Crear nuevo usuario</A>");
-				out.println("</BODY></HTML>");
-				*/
 			}
 		} catch (DAOException e) {
 			e.printStackTrace();
